@@ -1,10 +1,59 @@
-# Python-generated files
-__pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
+# ==========================================
+# 1. Environment & Secrets (CRITICAL)
+# ==========================================
+.env
+.env.local
+*.env
+*.pem
+*.key
 
-# Virtual environments
-.venv
+# ==========================================
+# 2. Virtual Environments & UV
+# ==========================================
+.venv/
+venv/
+ENV/
+env/
+.python-version
+
+# ==========================================
+# 3. Local Databases & Dumps
+# ==========================================
+*.db
+*.sqlite3
+*.sqlite
+nepse_bot.db
+
+# ==========================================
+# 4. Local Scraping, Logs & Working Folders
+# ==========================================
+junk/
+site_data/
+captcha_img/
+logs/
+*.log
+*.json.bak
+
+# ==========================================
+# 5. Python Bytecode & Cache
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ==========================================
+# 6. IDEs & OS System Files
+# ==========================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+
+
+# Python-generated files
+*.py[oc]
+*.egg-info
