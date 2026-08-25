@@ -29,7 +29,7 @@ class Security(Base):
     exchange_security_id = Column(Integer, nullable=False, unique=True)   # WS argument
     security_id = Column(Integer, nullable=False, unique=True)            # order payload "id"
     last_pre_close = Column(Numeric(10, 2), nullable=True)                # yesterday's close (pcp)
-    # circuit_price = Column(Numeric(10, 2), nullable=True)
+    circuit_price = Column(Numeric(10, 2), nullable=True)
     last_updated = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
     
 
