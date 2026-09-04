@@ -41,9 +41,13 @@ BROKER_NUMBER = os.getenv("MEMBER_CODE")
 # URLs
 BASE_URL = os.getenv("BASE_URL")
 WS_URL = f"wss://tms49.nepsetms.com.np/tmsapi/exskt/websocket?memberCode={MEMBER_CODE}"
-ORDER_API_URL = "https://tms49.nepsetms.com.np/tmsapi/orderApi/order/"
-TMS_BASE_URL = os.getenv(f"https://tms{BROKER_NUMBER}.nepsetms.com.np")
+TMS_BASE_URL = f"https://tms{BROKER_NUMBER}.nepsetms.com.np"
+ORDER_API_URL = f"{TMS_BASE_URL}/tmsapi/orderApi/order/"
 
+
+# URLs
+DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
+DISCORD_USER_ID = os.getenv("DISCORD_USER_ID")
 
 # Safety check
 if not CLIENT_CODE or not PASSWORD:

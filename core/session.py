@@ -9,7 +9,10 @@ from core.session_manager import update_session
 from utils.captcha_solver import captcha_solver
 
 from utils.exception import *
+from utils.discord_bot import send_private_message
 
+
+print(F"tms base url == {TMS_BASE_URL}")
 
 async def get_authenticated_session(keep_browser: bool = False) -> dict:
     """
@@ -60,7 +63,9 @@ async def get_authenticated_session(keep_browser: bool = False) -> dict:
         page = await context.new_page()
     
     print("Opening TMS login page...")
-    await page.goto("https://tms49.nepsetms.com.np/login")
+    target_url = f"{TMS_BASE_URL}/login"
+    print(f'target url = {target_url}')
+    await page.goto(target_url)
         
         
     
@@ -94,8 +99,19 @@ async def get_authenticated_session(keep_browser: bool = False) -> dict:
         await page.get_by_role("button", name="Login").click()
 
         await asyncio.sleep(2) 
-
-        if page.url.startswith("https://tms49.nepsetms.com.np/tms/client/dashboard"):
+        
+        print(f"current page url == {page.url}")
+        
+        # Check if redirected to change password
+        if "/tms/changepassword" in page.url:
+            print("⚠️ Password expired!")
+            await send_private_message("Password has expired. Please reset it.")
+            # Close browser cleanup and raise custom exception or exit
+            await browser.close()
+            await playwright.stop()
+            raise PasswordExpiredError("Password has expired. Please reset it.")
+                
+        if page.url.startswith(f"{TMS_BASE_URL}/tms/client/dashboard"):
             success = True
             break  # Exit retry loop immediately
 
@@ -139,6 +155,8 @@ async def get_authenticated_session(keep_browser: bool = False) -> dict:
     # input(">>> Press ENTER after you are logged in and see the dashboard...")
     # print(f"✅ captcha solved")
 
+
+    
     # Wait until dashboard loads
     await page.wait_for_url("**/tms/client/**", timeout=30_000)
 
