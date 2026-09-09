@@ -1,0 +1,111 @@
+{
+    "orderBook": {
+        "orderBookExtensions": [
+            {
+                "orderTypes": {
+                    "id": 1,
+                    "orderTypeCode": "LMT"
+                },
+                "disclosedQuantity": 0,
+                "orderValidity": {
+                    "id": 1,
+                    "orderValidityCode": "DAY"
+                },
+                "triggerPrice": 0,
+                "orderPrice": 0,
+                "orderQuantity": 0,
+                "remainingOrderQuantity": 0,
+                "marketType": {
+                    "id": 2,
+                    "marketType": "Continuous"
+                }
+            }
+        ],
+        "exchange": {
+            "id": 1
+        },
+        "dnaConnection": {},
+        "dealer": {},
+        "member": {},
+        "productType": {
+            "id": 1,
+            "productCode": "CNC"
+        },
+        "instrumentType": {
+            "id": 1,
+            "code": "EQ"
+        },
+        "client": {
+            "activeStatus": "A",
+            "id": 2205674,
+            "accountType": "CLI",
+            "allowedToTrade": "Y",
+            "clientMemberCode": "20210814139",
+            "clientOrDealer": "C",
+            "contactNumber": "9860035472",
+            "emailId": null,
+            "notsUniqueClientCode": "202108312585968",
+            "clientDealerType": null,
+            "clientGroup": {
+                "activeStatus": "A",
+                "id": 101,
+                "clientGroupCode": null,
+                "clientGroupName": null
+            },
+            "memberBranch": {
+                "activeStatus": "A",
+                "id": 2,
+                "branchLocation": null,
+                "branchName": null,
+                "hidden": null,
+                "branchProvince": null,
+                "branchDistrict": null,
+                "branchMunicipality": null,
+                "branchHead": null,
+                "branchPhoneNumber": null
+            },
+            "clientDealerAddressDetails": null,
+            "clientDealerBankDetail": null,
+            "clientDealerIndividual": null,
+            "clientDealerPerTradeLimits": null,
+            "clientDealerProductMappings": null,
+            "clientDealerOrderTypeMappings": null,
+            "clientDealerTradingLimits": null,
+            "clientDepositoryDetail": null,
+            "corporateDetail": null,
+            "corporateOwnershipDetails": null,
+            "displayName": "Nawaraj karki",
+            "blockedDate": null,
+            "remarks": null,
+            "parentId": null,
+            "recordType": null,
+            "collateralByEntities": null,
+            "shortSellMode": 0,
+            "onlineOrOffline": 1,
+            "panNumber": null,
+            "onlineFundTransfer": null,
+            "collateralCalculationMode": 1,
+            "isMarginLendingClient": null,
+            "clientRiskType": null,
+            "userAgreementChecked": null,
+            "referredBy": null,
+            "responseStatus": null,
+            "isCkycAccount": null,
+            "kycUpload": false,
+            "marginLendingClient": null
+        },
+        "security": {
+            "id": 0,
+            "exchangeSecurityId": 0,
+            "marketProtectionPercentage": 0,
+            "divisor": 100,
+            "boardLotQuantity": 1,
+            "tickSize": 0.1
+        },
+        "accountType": 1,
+        "cpMemberId": 0,
+        "buyOrSell": 1
+    },
+    "orderPlacedBy": 2,
+    "exchangeOrderId": null
+}
