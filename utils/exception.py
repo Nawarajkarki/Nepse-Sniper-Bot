@@ -1,5 +1,3 @@
-# utils/exceptions.py
-
 class AuthenticationError(Exception):
     """Base class for all authentication-related failures"""
     def __init__(self, message: str, fatal: bool = False):
@@ -23,4 +21,12 @@ class MaxCaptchaRetriesExceeded(AuthenticationError):
         super().__init__(
             f"Login failed after {max_attempts} attempts. Persistent CAPTCHA solving issues.",
             fatal=False  # Could be temporary (e.g., low balance, bad image)
+        )
+
+class PasswordExpiredError(Exception):
+    """All login attempts failed due to persistent CAPTCHA issues"""
+    def __init__(self, max_attempts: int):
+        super().__init__(
+            f"Password expired.",
+            fatal=True  
         )
